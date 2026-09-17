@@ -116,7 +116,7 @@ export default function PledgeAction({ startDate }) {
         className={`pledge-btn ${hasPledged ? 'pledged' : 'active'}`} 
         onClick={handlePledge}
       >
-        {hasPledged ? "YOU HAVE TAKEN A STAND" : "I STAND AGAINST THIS"}
+        {hasPledged ? "YOU HAVE TAKEN A STAND" : "I STAND AGAINST THIS SILENCE"}
       </button>
 
         <button className="share-btn" onClick={handleShare}>
