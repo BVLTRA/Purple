@@ -98,7 +98,7 @@ export default function App() {
             rel="noreferrer" 
             className="portfolio-link"
           >
-            Visit PORTFOLIO 
+            bvltra.com
           </a>
           <span className="copyright">
             © {new Date().getFullYear()} BVLTRA. ALL RIGHTS RESERVED.
