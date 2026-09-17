@@ -90,7 +90,7 @@ export default function PledgeAction({ startDate }) {
       
       {/* COUNT-UP STOPWATCH */}
       <div className="stopwatch-display">
-        <div className="timer-label">TIME SINCE SEPT 14:</div>
+        <div className="timer-label">TIME SINCE JULY 15 (1st victim):</div>
         <div className="timer-grid">
           <div className="timer-cell"><span>{pad(timeElapsed.days)}</span><small>D</small></div>
           <div className="timer-sep">:</div>
