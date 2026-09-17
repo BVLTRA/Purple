@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import TrackItem from './components/TrackItem';
+import PledgeAction from './components/PledgeAction';
 import heroImage from './assets/image.png'; 
 import CountdownButton from './components/CountdownButton';
 import bvltraLogo from './assets/bvltra-logo.svg';
@@ -10,10 +11,17 @@ export default function App() {
     <div className="campaign-container">
       
       <header className="site-header">
-        <h1>
-          Gender Based<br />
-          <span className="accent-text">Violence</span>
-        </h1>
+        <div className="header-titles">
+          <h1>
+            Gender Based Violence <br />
+            <span className="accent-text">AWARENESS</span>
+          </h1>
+        </div>
+        <div className="header-disclaimer">
+          <p>
+            STRICTLY not affiliated with the OW SC campaign. I'm just taking my stand against this issue.
+          </p>
+        </div>
       </header>
 
       <div className="intro-block">
@@ -60,19 +68,20 @@ export default function App() {
         />
       </div>
 
-      <footer className="site-footer">
-        <CountdownButton 
-          targetDate="2026-09-21T00:00:00" 
-          voteUrl="https://students.openwindow.co.za/open-window-student-sc/" 
-        />
+      {/* THE NEW CONTEXT PARAGRAPH */}
+      <div className="awareness-paragraph">
+        <p>
+          This is not just about posting a hashtag and moving on. It requires an active, 
+          daily refusal to accept this violence as our normal. The stopwatch below marks 
+          the continuous time we've lived in the wake of the discovery of the first victim on July 15th 2026. 
+          The large number represents individuals who refuse to be silent.
+        </p>
+      </div>
 
-        <div className="candidate-meta">
-          <h3 className="candidate-name">
-            Tshedza <span className="frank-highlight">"Frank"</span><br />Mosehane
-          </h3>
-          <span className="student-id">SN: 251056</span>
-        </div>
+      <footer className="site-footer">
+        <PledgeAction startDate="2026-07-15T00:00:00" />
       </footer>
+
       {/* BVLTRA SUB-FOOTER */}
       <aside className="bvltra-footer">
         <div className="bvltra-brand">
