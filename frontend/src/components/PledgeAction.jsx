@@ -47,13 +47,18 @@ export default function PledgeAction({ startDate }) {
     if (!hasPledged) {
       setHasPledged(true);
       localStorage.setItem('hasPledged_purple', 'true');
-      
-      // Optimistic UI update so it feels instant
       setPledgeCount(prev => prev + 1); 
       
-      // Tell Firebase to securely add +1 to the database
       await updateDoc(statsRef, {
         count: increment(1)
+      });
+    } else {
+      setHasPledged(false);
+      localStorage.removeItem('hasPledged_purple');
+      setPledgeCount(prev => prev - 1); 
+      
+      await updateDoc(statsRef, {
+        count: increment(-1)
       });
     }
   };
@@ -108,12 +113,11 @@ export default function PledgeAction({ startDate }) {
       {/* ACTION BUTTONS */}
       <div className="action-group">
         <button 
-          className={`pledge-btn ${hasPledged ? 'pledged' : 'active'}`} 
-          onClick={handlePledge}
-          disabled={hasPledged}
-        >
-          {hasPledged ? "YOU HAVE TAKEN A STAND" : "I STAND AGAINST THIS"}
-        </button>
+        className={`pledge-btn ${hasPledged ? 'pledged' : 'active'}`} 
+        onClick={handlePledge}
+      >
+        {hasPledged ? "YOU HAVE TAKEN A STAND" : "I STAND AGAINST THIS"}
+      </button>
 
         <button className="share-btn" onClick={handleShare}>
           SHARE THE CAMPAIGN ↗
@@ -125,9 +129,9 @@ export default function PledgeAction({ startDate }) {
         <div className="memorial-names">
           <h4 className="memorial-header">SAY THEIR NAMES.</h4>
           <ul className="memorial-list">
-            <li>Elizabeth "Tsontso" Moselakgomo</li>
-            <li>Itumeleng Kekana</li>
-            <li>And the 6 other unidentified women found across Ekurhuleni</li>
+            <li>Elizabeth "Tsontso" Moselakgomo 38</li>
+            <li>Itumeleng Kekana 32</li>
+            <li>And the 7 other unidentified women found, between ages 20 to 38</li>
           </ul>
         </div>
         
