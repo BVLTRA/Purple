@@ -74,7 +74,7 @@ export default function App() {
           This is not just about posting a hashtag and moving on. It requires an active, 
           daily refusal to accept this violence as our normal. The stopwatch below marks 
           the continuous time we've lived in the wake of the discovery of the first victim on July 15th 2026. 
-          The large number represents individuals who refuse to be silent.
+          The large number represents individuals who <span className="frank-highlight">refuse to be silent</span>.
         </p>
       </div>
 

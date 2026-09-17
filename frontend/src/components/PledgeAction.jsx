@@ -120,7 +120,7 @@ export default function PledgeAction({ startDate }) {
       </button>
 
         <button className="share-btn" onClick={handleShare}>
-          SHARE THE CAMPAIGN ↗
+          SHARE THE CAMPAIGN 
         </button>
       </div>
 
@@ -147,7 +147,7 @@ export default function PledgeAction({ startDate }) {
             rel="noreferrer" 
             className="stats-citation"
           >
-            — Source: SAPS 1st Quarter Crime Statistics (April - June 2026) ↗
+            — Source: SAPS 1st Quarter Crime Statistics (April - June 2026) 
           </a>
         </div>
       </div>
