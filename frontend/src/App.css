@@ -1,0 +1,368 @@
+/* BASE STYLES */
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --accent-color: #fc38e2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+.campaign-container {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* TYPOGRAPHY & HEADER */
+.site-header {
+  border-bottom: 4px solid var(--text-color);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.site-header h1 {
+  font-size: clamp(4rem, 15vw, 7rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+}
+
+.accent-text {
+  color: var(--accent-color);
+}
+
+/* INTRO PARAGRAPH */
+.intro-block {
+  margin-bottom: 32px;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 16px;
+  max-width: 95%;
+}
+
+.intro-block p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #eeeeee;
+}
+
+.frank-highlight {
+  color: var(--accent-color);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+/* HERO IMAGE PORTRAIT */
+.hero-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* .hero-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid var(--accent-color);
+  border-radius: 40px;
+  transform: rotate(3deg);
+  transition: transform 0.3s ease;
+} */
+
+.hero-section:hover .hero-border {
+  transform: rotate(0deg);
+}
+
+.hero-image {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale(0%) contrast(100%) brightness(110%);
+}
+
+/* TRACKLIST ACCORDION */
+.tracklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.track-item {
+  border: 2px solid var(--text-color);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.track-item:hover, .track-item.open {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.track-label {
+  background-color: var(--accent-color);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: inline-block;
+  padding: 2px 6px;
+  margin-bottom: 4px;
+}
+
+.track-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.track-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* Accordion Logic */
+.track-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+.track-item.open .track-content {
+  max-height: 200px; /* Arbitrary large number to allow expansion */
+  margin-top: 12px;
+}
+
+.track-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* FOOTER & COUNTDOWN */
+.site-footer {
+  margin-top: auto;
+  border-top: 4px solid var(--text-color);
+  padding-top: 24px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+@media (min-width: 480px) {
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.vote-action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 220px;
+}
+
+.vote-btn {
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  text-align: center;
+  border: 2px solid var(--text-color);
+  width: 100%;
+  transition: all 0.2s ease;
+  display: block;
+  text-decoration: none;
+}
+
+.vote-btn.disabled {
+  background-color: #111;
+  color: #666;
+  border-color: #444;
+  cursor: not-allowed;
+}
+
+.vote-btn.active {
+  background-color: var(--accent-color);
+  color: #000;
+  cursor: pointer;
+}
+
+.vote-btn.active:hover {
+  background-color: var(--text-color);
+}
+
+.timer-grid {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.timer-cell {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.timer-cell small {
+  font-size: 0.65rem;
+  color: #888;
+}
+
+.timer-sep {
+  color: #555;
+}
+
+.live-pill {
+  background: var(--accent-color);
+  color: #000;
+  font-weight: 900;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  letter-spacing: 0.05em;
+}
+
+/* CANDIDATE INFO */
+.candidate-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (min-width: 480px) {
+  .candidate-meta {
+    align-items: flex-end;
+  }
+}
+
+.candidate-name {
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+}
+
+.student-id {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+/* BVLTRA SUB-FOOTER */
+.bvltra-footer {
+  border-top: 1px solid #222;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+@media (min-width: 600px) {
+  .bvltra-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.bvltra-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.bvltra-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.bvltra-desc {
+  line-height: 1.4;
+  font-weight: 500;
+  color: #888;
+}
+
+.bvltra-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+@media (min-width: 600px) {
+  .bvltra-links {
+    align-items: flex-end;
+  }
+}
+
+.portfolio-link {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  transition: color 0.2s ease;
+  font-style: underline;
+}
+
+.portfolio-link:hover {
+  color: var(--accent-color);
+}
+
+.copyright {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: #555;
+  letter-spacing: 0.04em;
+}
