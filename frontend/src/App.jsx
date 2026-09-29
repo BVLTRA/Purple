@@ -5,6 +5,7 @@ import PledgeAction from './components/PledgeAction';
 import heroImage from './assets/image.png'; 
 import CountdownButton from './components/CountdownButton';
 import bvltraLogo from './assets/bvltra-logo.svg';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   return (
@@ -108,7 +109,7 @@ export default function App() {
           </span>
         </div>
       </aside>
-      
+      <Analytics />
     </div>
   );
 }
