@@ -129,9 +129,16 @@ export default function PledgeAction({ startDate }) {
         <div className="memorial-names">
           <h4 className="memorial-header">SAY THEIR NAMES.</h4>
           <ul className="memorial-list">
-            <li>Elizabeth "Tsontso" Moselakgomo 38</li>
-            <li>Itumeleng Kekana 32</li>
-            <li>And the 7 other unidentified women found, between ages 20 to 38</li>
+            <li>Busisiwe Mahlangu – 37</li>
+            <li>Itumeleng Kekana – 32</li>
+            <li>Elizabeth "Tsontso" Moselakgomo – 38</li>
+            <li>Dineo Evelyn Motapane – 38</li>
+            <li>Gracious Nkomo – 28</li>
+            <li>Boitumelo Gift Mashita – 23</li>
+            <li>Nomfesane Mjobo</li>
+            <li>Jabulile Ntimba</li>
+            <li>Ntombifuthi Nxumalo</li>
+            <li>And the 2 other unidentified women found, estimated to be in their 20s</li>
           </ul>
         </div>
         

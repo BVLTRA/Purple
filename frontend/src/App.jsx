@@ -26,9 +26,16 @@ export default function App() {
 
       <div className="intro-block">
         <p>
-          South Africa faces a <span className="frank-highlight">severe femicide crisis</span>, with rates estimated to be significantly higher than the global average. As of now, police are investigating the alarming recovery of multiple women's bodies around the OR Tambo International Airport area near Johannesburg and Pretoria, sparking widespread public fear, protests, and concerns over potential serial targeting.
+          This is not just about posting a hashtag and moving on. It requires an active, 
+          daily refusal to accept this violence as our normal. The stopwatch below marks 
+          the continuous time we've lived in the wake of the discovery of the first victim on July 15th 2026. 
+          The large number represents individuals who visited and <span className="frank-highlight">refuse to be silent</span> beside me.
         </p>
+
+        
       </div>
+      
+        <PledgeAction startDate="2026-07-15T00:00:00" />
 
       <div className="hero-section">
         <div className="hero-border"></div>
@@ -71,15 +78,11 @@ export default function App() {
       {/* THE NEW CONTEXT PARAGRAPH */}
       <div className="awareness-paragraph">
         <p>
-          This is not just about posting a hashtag and moving on. It requires an active, 
-          daily refusal to accept this violence as our normal. The stopwatch below marks 
-          the continuous time we've lived in the wake of the discovery of the first victim on July 15th 2026. 
-          The large number represents individuals who <span className="frank-highlight">refuse to be silent</span>.
+          South Africa faces a <span className="frank-highlight">severe femicide crisis</span>, with rates estimated to be significantly higher than the global average. As of now, police are investigating the alarming recovery of multiple women's bodies around the OR Tambo International Airport area near Johannesburg and Pretoria, sparking widespread public fear, protests, and concerns over potential serial targeting. <br/> <br/> There is only so much I can do as no individual, but keeping silent is not an option!
         </p>
       </div>
 
       <footer className="site-footer">
-        <PledgeAction startDate="2026-07-15T00:00:00" />
       </footer>
 
       {/* BVLTRA SUB-FOOTER */}
